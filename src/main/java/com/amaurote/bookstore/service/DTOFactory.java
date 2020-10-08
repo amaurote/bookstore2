@@ -1,13 +1,13 @@
 package com.amaurote.bookstore.service;
 
 import com.amaurote.bookstore.dto.BookDTO;
-import com.amaurote.bookstore.domain.entities.Book;
+import com.amaurote.bookstore.domain.entity.Book;
 import org.springframework.stereotype.Service;
 
 @Service
 public class DTOFactory {
 
-    BookDTO getBookDTO(Book book) {
+    public BookDTO getBookDTO(Book book) {
         BookDTO dto = new BookDTO();
         dto.setCatalogId(book.getCatalogId());
         dto.setIsbn(book.getIsbn());

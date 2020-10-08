@@ -1,6 +1,6 @@
 package com.amaurote.bookstore.service;
 
-import com.amaurote.bookstore.domain.entities.user.User;
+import com.amaurote.bookstore.domain.entity.User;
 import com.amaurote.bookstore.exception.UserException;
 import com.amaurote.bookstore.repository.UserRepository;
 import org.springframework.stereotype.Service;

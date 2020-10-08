@@ -1,8 +1,8 @@
 package com.amaurote.bookstore.service;
 
-import com.amaurote.bookstore.domain.entities.Book;
-import com.amaurote.bookstore.domain.entities.Rating;
-import com.amaurote.bookstore.domain.entities.user.User;
+import com.amaurote.bookstore.domain.entity.Book;
+import com.amaurote.bookstore.domain.entity.Rating;
+import com.amaurote.bookstore.domain.entity.User;
 import com.amaurote.bookstore.exception.RatingException;
 import com.amaurote.bookstore.repository.BookRepository;
 import com.amaurote.bookstore.repository.RatingRepository;

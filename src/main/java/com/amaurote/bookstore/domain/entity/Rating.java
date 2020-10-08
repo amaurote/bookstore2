@@ -1,6 +1,4 @@
-package com.amaurote.bookstore.domain.entities;
-
-import com.amaurote.bookstore.domain.entities.user.User;
+package com.amaurote.bookstore.domain.entity;
 
 import javax.persistence.*;
 

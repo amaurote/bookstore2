@@ -1,4 +1,4 @@
-package com.amaurote.bookstore.domain.entities;
+package com.amaurote.bookstore.domain.entity;
 
 import com.amaurote.bookstore.domain.enums.Format;
 import com.amaurote.bookstore.domain.enums.Language;
@@ -73,6 +73,8 @@ public class Book {
     @OneToMany
     @JoinTable(inverseJoinColumns=@JoinColumn(name="category_id"))
     private List<Category> categories;
+
+    // todo add relation to rating
 
     public Book() {
     }

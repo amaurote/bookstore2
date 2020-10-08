@@ -2,7 +2,7 @@ package com.amaurote.bookstore.service;
 
 import com.amaurote.bookstore.domain.enums.Language;
 import com.amaurote.bookstore.dto.BookDTO;
-import com.amaurote.bookstore.domain.entities.Book;
+import com.amaurote.bookstore.domain.entity.Book;
 import com.amaurote.bookstore.domain.enums.Format;
 import com.amaurote.bookstore.repository.BookRepository;
 import org.springframework.stereotype.Service;
@@ -59,19 +59,11 @@ public class BookService {
         return book;
     }
 
-    public BookDTO getBookByCatalogId(String catalogId) {   // todo change it to entity object
-        Book book = bookRepository.findOneByCatalogId(catalogId).orElse(null);
-        if(book != null)
-            return dtoFactory.getBookDTO(book);
-        else
-            return null;
+    public Book getBookByCatalogId(String catalogId) {   // todo change it to entity object
+        return bookRepository.findOneByCatalogId(catalogId).orElse(null);
     }
 
-    public BookDTO getBookByIsbn(String isbn) {
-        Book book = bookRepository.findAllByIsbn(isbn);
-        if(book != null)
-            return dtoFactory.getBookDTO(book);
-        else
-            return null;
+    public Book getBookByIsbn(String isbn) {
+        return bookRepository.findAllByIsbn(isbn).orElse(null);
     }
 }

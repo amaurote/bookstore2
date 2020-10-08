@@ -1,4 +1,4 @@
-package com.amaurote.bookstore.domain.entities;
+package com.amaurote.bookstore.domain.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 

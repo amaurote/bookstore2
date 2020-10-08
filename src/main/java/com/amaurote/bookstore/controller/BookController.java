@@ -2,6 +2,7 @@ package com.amaurote.bookstore.controller;
 
 import com.amaurote.bookstore.dto.BookDTO;
 import com.amaurote.bookstore.service.BookService;
+import com.amaurote.bookstore.service.DTOFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,8 +20,11 @@ public class BookController {
 
     private final BookService bookService;
 
-    public BookController(BookService bookService) {
+    private final DTOFactory dtoFactory;
+
+    public BookController(BookService bookService, DTOFactory dtoFactory) {
         this.bookService = bookService;
+        this.dtoFactory = dtoFactory;
     }
 
     @PostMapping(value = "/add")
@@ -57,10 +61,10 @@ public class BookController {
 
         BookDTO dto = null;
         if(id != null && !id.isEmpty())
-            dto = bookService.getBookByCatalogId(id);
+            dto = dtoFactory.getBookDTO(bookService.getBookByCatalogId(id));
         else if(isbn != null && !isbn.isEmpty())
-            dto = bookService.getBookByIsbn(isbn);
+            dto = dtoFactory.getBookDTO(bookService.getBookByIsbn(isbn));
 
-        return new ResponseEntity<BookDTO>(dto, HttpStatus.OK);
+        return new ResponseEntity<>(dto, HttpStatus.OK);
     }
 }

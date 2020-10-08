@@ -1,7 +1,7 @@
 package com.amaurote.bookstore.controller;
 
-import com.amaurote.bookstore.domain.entities.Book;
-import com.amaurote.bookstore.domain.entities.user.User;
+import com.amaurote.bookstore.domain.entity.Book;
+import com.amaurote.bookstore.domain.entity.User;
 import com.amaurote.bookstore.service.BookService;
 import com.amaurote.bookstore.service.RatingService;
 import com.amaurote.bookstore.service.UserService;
@@ -32,12 +32,11 @@ public class RatingController {
     @PreAuthorize("hasRole('ROLE_USER')")
     public void test(Principal principal) {
         User user;
-        if(principal != null)
+        if (principal != null) {
             user = userService.getUserByUsername(principal.getName());
-
-//        Book book = bookService.getBookByCatalogId("326617");
-//
-//        ratingService.rate()
+            Book book = bookService.getBookByCatalogId("326617");
+            ratingService.rate(book, user, 5);
+        }
     }
 
 }
