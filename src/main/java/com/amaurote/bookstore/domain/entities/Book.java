@@ -1,4 +1,4 @@
-package com.amaurote.bookstore.domain.models;
+package com.amaurote.bookstore.domain.entities;
 
 import com.amaurote.bookstore.domain.enums.Format;
 import com.amaurote.bookstore.domain.enums.Language;

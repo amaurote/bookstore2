@@ -1,6 +1,6 @@
 package com.amaurote.bookstore.repository;
 
-import com.amaurote.bookstore.domain.models.user.Role;
+import com.amaurote.bookstore.domain.entities.user.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RoleRepository extends JpaRepository<Role, Integer>{

@@ -1,8 +1,8 @@
 package com.amaurote.bookstore.service;
 
-import com.amaurote.bookstore.domain.models.user.MyUserDetails;
-import com.amaurote.bookstore.domain.models.user.Role;
-import com.amaurote.bookstore.domain.models.user.User;
+import com.amaurote.bookstore.domain.entities.user.MyUserDetails;
+import com.amaurote.bookstore.domain.entities.user.Role;
+import com.amaurote.bookstore.domain.entities.user.User;
 import com.amaurote.bookstore.dto.UserRegistrationDTO;
 import com.amaurote.bookstore.repository.RoleRepository;
 import com.amaurote.bookstore.repository.UserRepository;
@@ -11,7 +11,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

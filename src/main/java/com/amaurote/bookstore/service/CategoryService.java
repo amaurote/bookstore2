@@ -1,6 +1,6 @@
 package com.amaurote.bookstore.service;
 
-import com.amaurote.bookstore.domain.models.Category;
+import com.amaurote.bookstore.domain.entities.Category;
 import com.amaurote.bookstore.dto.CategoryDTO;
 import com.amaurote.bookstore.repository.CategoryRepository;
 import org.springframework.stereotype.Service;

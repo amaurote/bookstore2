@@ -1,7 +1,7 @@
 package com.amaurote.bookstore.service;
 
 import com.amaurote.bookstore.dto.BookDTO;
-import com.amaurote.bookstore.domain.models.Book;
+import com.amaurote.bookstore.domain.entities.Book;
 import org.springframework.stereotype.Service;
 
 @Service
