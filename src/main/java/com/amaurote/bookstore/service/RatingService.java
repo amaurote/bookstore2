@@ -32,7 +32,7 @@ public class RatingService {
 
         Rating ratingObj = ratingRepository.findByBookAndAuthor(book, author)
                 .orElse(new Rating(book, author, rating));
-
+        ratingObj.setRating(rating);    // todo refactor, I don't like it
         return ratingRepository.save(ratingObj);
     }
 
