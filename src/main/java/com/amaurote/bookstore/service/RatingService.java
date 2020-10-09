@@ -21,18 +21,20 @@ public class RatingService {
     }
 
     public Rating rateByCatalogId(String catalogId, User author, int rating) {
-        return rate(bookRepository.findOneByCatalogId(catalogId).orElse(null), author, rating);
+        return rateOrUpdate(bookRepository.findOneByCatalogId(catalogId).orElse(null), author, rating);
     }
 
-    public Rating rate(Book book, User author, int rating){
+    public Rating rateOrUpdate(Book book, User author, int rating){
         if(book == null || author == null)
             throw new RatingException("Unable to map rating");
         if(rating <= 0 || rating > 5)
             throw new RatingException("Invalid rating value");
 
         Rating ratingObj = ratingRepository.findByBookAndAuthor(book, author)
-                .orElse(new Rating(book, author, rating));
-        ratingObj.setRating(rating);    // todo refactor, I don't like it
+                .orElse(new Rating());
+        ratingObj.setAuthor(author);
+        ratingObj.setBook(book);
+        ratingObj.setRating(rating);
         return ratingRepository.save(ratingObj);
     }
 

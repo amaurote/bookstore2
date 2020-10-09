@@ -136,7 +136,8 @@ public class CategoryService {
             return category;
     }
 
-    public List<CategoryDTO> getSubcategories(Long categoryId) {
+    public List<CategoryDTO> getSubcategories(Long parentId) {
+        List<Category> categories = categoryRepository.findAllByParent(parentId);
         return null;
     }
 }

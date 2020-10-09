@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Table(name = "reviews")
@@ -24,6 +25,9 @@ public class Review {
 
     @Column(name = "text", length = 512, nullable = false)
     private String text;
+
+    @Column(name = "date_created", nullable = false)
+    private Date dateCreated;
 
 //    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 //    private Set<UserVote> votes = new HashSet<>();
@@ -67,4 +71,13 @@ public class Review {
 //    public void setVotes(Set<UserVote> votes) {
 //        this.votes = votes;
 //    }
+
+
+    public Date getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
+    }
 }

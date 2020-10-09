@@ -3,7 +3,7 @@ package com.amaurote.bookstore.controller;
 import com.amaurote.bookstore.domain.entity.Book;
 import com.amaurote.bookstore.domain.entity.User;
 import com.amaurote.bookstore.service.BookService;
-import com.amaurote.bookstore.service.RatingService;
+import com.amaurote.bookstore.service.ReviewService;
 import com.amaurote.bookstore.service.UserService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,16 +13,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.security.Principal;
 
 @RestController
-@RequestMapping("/rating")
-public class RatingController {
+@RequestMapping("/review")
+public class ReviewController {
+
+    private final ReviewService reviewService;
 
     private final UserService userService;
 
-    private final RatingService ratingService;
+    private final BookService bookService;
 
-    public RatingController(UserService userService, RatingService ratingService) {
+    public ReviewController(ReviewService reviewService, UserService userService, BookService bookService) {
+        this.reviewService = reviewService;
         this.userService = userService;
-        this.ratingService = ratingService;
+        this.bookService = bookService;
     }
 
     @GetMapping("/test")
@@ -31,7 +34,8 @@ public class RatingController {
         User user;
         if (principal != null) {
             user = userService.getUserByUsername(principal.getName());
-            ratingService.rateByCatalogId("326617", user, 2);
+            Book book = bookService.getBookByCatalogId("326617");
+            reviewService.reviewOrUpdate(book, user, "This is my second review. Oh yeah...");
         }
     }
 
