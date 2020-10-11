@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 public class CategoryDTO {
 
     private String name;
+    private Integer parentId;
     private String categoryStr;
     private String path;
     private String pathPretty;

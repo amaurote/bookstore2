@@ -17,11 +17,13 @@ public class ReviewService {
         this.reviewRepository = reviewRepository;
     }
 
-    public Review reviewOrUpdate(Book book, User author, String text){
-        if(book == null || author == null)
+    public Review reviewOrUpdate(Book book, User author, String text) {
+        if (book == null || author == null) {
             throw new ReviewException("Unable to map review");
-        if(text == null || text.isEmpty() || text.isBlank() || text.length() > 500)
+        }
+        if (text == null || text.isEmpty() || text.isBlank() || text.length() > 500) {
             throw new ReviewException("Invalid string");
+        }
 
         Review review = reviewRepository.findByBookAndAuthor(book, author)
                 .orElse(new Review());

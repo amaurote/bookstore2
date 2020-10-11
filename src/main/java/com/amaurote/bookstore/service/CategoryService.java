@@ -3,6 +3,7 @@ package com.amaurote.bookstore.service;
 import com.amaurote.bookstore.domain.entity.Category;
 import com.amaurote.bookstore.dto.CategoryDTO;
 import com.amaurote.bookstore.repository.CategoryRepository;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,20 +20,20 @@ public class CategoryService {
     }
 
     @Transactional
-    public Category createCategoryFromString(String ctgStr) {
+    public Category createCategoryFromString(String categoryStr) {
         // trim and check
-        ctgStr = ctgStr.trim().toLowerCase();
-        checkCategoryString(ctgStr);
+        categoryStr = StringUtils.trimToEmpty(categoryStr).toLowerCase();
+        checkCategoryString(categoryStr);
 
         // extract categories
         StringBuilder sb = new StringBuilder();
         Category parent = null;
 
-        for (int i = 0; i < ctgStr.length(); i++) {
-            char c = ctgStr.charAt(i);
+        for (int i = 0; i < categoryStr.length(); i++) {
+            char c = categoryStr.charAt(i);
 
             // last char
-            if (i + 1 == ctgStr.length()) {
+            if (i + 1 == categoryStr.length()) {
                 sb.append(c);
                 return findOrCreate(sb.toString(), parent);
             }

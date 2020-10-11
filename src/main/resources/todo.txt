@@ -1,0 +1,6 @@
+unit tests
+SpringTestRunner
+rework CategoryService
+use Apache StringUtils
+change ids
+run analyse

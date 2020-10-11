@@ -32,7 +32,7 @@ public class CategoryController {
     @GetMapping
     public ResponseEntity<?> getCategory(@RequestParam(value = "id") String id) {
         long categoryId = Long.parseLong(id);
-        return new ResponseEntity<CategoryDTO>(categoryService.getCategory(categoryId), HttpStatus.OK);
+        return new ResponseEntity<>(categoryService.getCategory(categoryId), HttpStatus.OK);
     }
 
     @GetMapping(value = "/subcat")
