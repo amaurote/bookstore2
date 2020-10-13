@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -24,11 +23,9 @@ import java.util.stream.Collectors;
 public class MyUserDetailsService implements UserDetailsService {
 
     private final UserRepository userRepository;
-    private final RoleRepository roleRepository;
 
-    public MyUserDetailsService(UserRepository userRepository, RoleRepository roleRepository) {
+    public MyUserDetailsService(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.roleRepository = roleRepository;
     }
 
     @Override
@@ -38,22 +35,6 @@ public class MyUserDetailsService implements UserDetailsService {
         User loaded = user.get();
 
         return new MyUserDetails(loaded.getUserName(), loaded.getPassword(), mapRolesToAuthorities(loaded.getRoles())); // todo pass active and enabled
-    }
-
-    @Transactional
-    public User save(UserRegistrationDTO dto) {
-        Set<Role> roles = new HashSet<>();
-        roles.add(roleRepository.findByName("ROLE_USER"));
-
-        User user = new User();
-        user.setUserName(dto.getUsername());
-        user.setPassword(dto.getPassword());
-        user.setEmail(dto.getEmail());
-        user.setRoles(roles);
-        user.setActive(true);
-        user.setEnabled(true);
-
-        return userRepository.save(user);
     }
 
     private Set<GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles) {

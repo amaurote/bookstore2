@@ -18,7 +18,7 @@ public class Category {
     @GenericGenerator(name = "idn", strategy = "com.amaurote.bookstore.domain.utils.IdNumberGenerator")
     @GeneratedValue(generator = "idn")
     @Column(name = "id", length = 128, updatable = false, nullable = false, unique = true)
-    private Long id;
+    private Integer id;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -32,11 +32,11 @@ public class Category {
     public Category() {
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

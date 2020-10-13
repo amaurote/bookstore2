@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.List;
@@ -27,7 +28,7 @@ public class Book {
     private String id;
 
     @Column(name = "catalog_id", nullable = false, unique = true)
-    private String catalogId;
+    private Integer catalogId;
 
     @Column(name = "isbn", nullable = false)
     private String isbn;
@@ -35,10 +36,10 @@ public class Book {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "original_name", nullable = false)
+    @Column(name = "original_name")
     private String originalName;
 
-    @Column(name = "author", nullable = false)
+    @Column(name = "author")
     private String author;
 
     @Column(name = "publisher")
@@ -49,6 +50,9 @@ public class Book {
 
     @Column(name = "original_publication")
     private String originalPublication;
+
+    @Column(name = "future_publication")
+    private String futurePublication;
 
     @Column(name = "description")
     private String description;
@@ -70,7 +74,7 @@ public class Book {
     @Column(name = "weight")
     private Integer weight;
 
-    @OneToMany
+    @ManyToMany
     @JoinTable(inverseJoinColumns=@JoinColumn(name="category_id"))
     private List<Category> categories;
 
@@ -87,11 +91,11 @@ public class Book {
         this.id = id;
     }
 
-    public String getCatalogId() {
+    public Integer getCatalogId() {
         return catalogId;
     }
 
-    public void setCatalogId(String catalogId) {
+    public void setCatalogId(Integer catalogId) {
         this.catalogId = catalogId;
     }
 
@@ -149,6 +153,14 @@ public class Book {
 
     public void setOriginalPublication(String originalPublication) {
         this.originalPublication = originalPublication;
+    }
+
+    public String getFuturePublication() {
+        return futurePublication;
+    }
+
+    public void setFuturePublication(String futurePublication) {
+        this.futurePublication = futurePublication;
     }
 
     public String getDescription() {

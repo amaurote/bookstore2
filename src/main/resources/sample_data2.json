@@ -1,0 +1,386 @@
+[
+  {
+    "catalogId": 732203,
+    "isbn": "9788076620681",
+    "name": "Království",
+    "originalName": "Kongeriket",
+    "author": "Jo Nesbo",
+    "publisher": "Kniha Zlín",
+    "futurePublication": "16.11.2020",
+    "language": "cz",
+    "format": "HARDCOVER",
+    "pages": 480,
+    "dimensions": "130×200 mm",
+    "categoryPath": [
+      "knihy.beletria.trilery.ostatne",
+      "knihy.beletria.romany.novodobe.detektivne_krimi"
+    ]
+  },
+  {
+    "catalogId": 780557,
+    "isbn": "9788099925404",
+    "name": "Telo v 21. storočí",
+    "originalName": "Telo v 21. storočí",
+    "author": "Michal Červený, Michal Sedliak",
+    "publisher": "N Press",
+    "originalPublication": 2020,
+    "publication": 2020,
+    "language": "sk",
+    "format": "PAPERBACK",
+    "pages": 152,
+    "dimensions": "145×215 mm",
+    "weight": 235,
+    "categoryPath": [
+      "knihy.odborna_a_naucna.zdravie_zivotny_styl.diety_zdrava_vyziva.vyziva"
+    ]
+  },
+  {
+    "catalogId": 306367,
+    "isbn": "9788056604748",
+    "name": "Podzemný kryt",
+    "originalName": "Deep Shelter",
+    "author": "Oliver Harris",
+    "publisher": "XYZ",
+    "publication": 2018,
+    "language": "sk",
+    "format": "HARDCOVER",
+    "pages": 416,
+    "dimensions": "130×200 mm",
+    "weight": 504,
+    "categoryPath": [
+      "knihy.beletria.detektivky.moderne_detektivky.anglicke_detektivky"
+    ]
+  },
+  {
+    "catalogId": 302078,
+    "isbn": "9788055633930",
+    "name": "Dve tváre pravdy",
+    "originalName": "Two Kinds of Truth",
+    "author": "Michael Connelly",
+    "publisher": "Slovart",
+    "publication": 2018,
+    "language": "sk",
+    "format": "HARDCOVER",
+    "pages": 312,
+    "dimensions": "130×210 mm",
+    "weight": 377,
+    "categoryPath": [
+      "knihy.beletria.detektivky.moderne_detektivky.americke_detektivky"
+    ]
+  },
+  {
+    "catalogId": 163882,
+    "isbn": "9788087067086",
+    "name": "Kultura renesance v Itálii",
+    "author": "Jacob Burckhardt",
+    "publisher": "Rybka Publishers",
+    "publication": 2013,
+    "language": "cz",
+    "format": "HARDCOVER",
+    "pages": 536,
+    "dimensions": "140×208 mm",
+    "weight": 847,
+    "categoryPath": [
+      "knihy.umenie.teoria_a_dejiny_umenia.dejiny_umenia"
+    ]
+  },
+  {
+    "catalogId": 274860,
+    "isbn": "9788055648361",
+    "name": "Anjel v podsvetí",
+    "originalName": "Anjel v podsvetí",
+    "author": "Juraj Červenák",
+    "publisher": "Slovart",
+    "originalPublication": 2020,
+    "publication": 2020,
+    "language": "sk",
+    "format": "HARDCOVER",
+    "pages": 416,
+    "dimensions": "130×210 mm",
+    "weight": 555,
+    "categoryPath": [
+      "knihy.beletria.detektivky.historicke_detektivky",
+      "knihy.beletria.slovenska_proza.romany.detektivky_trilery",
+      "knihy.beletria.romany.historicke.detektivne_krimi"
+    ]
+  },
+  {
+    "catalogId": 315649,
+    "isbn": "9788055639178",
+    "name": "Les prízrakov",
+    "originalName": "Les prízrakov",
+    "author": "Juraj Červenák",
+    "publisher": "Slovart",
+    "originalPublication": 2019,
+    "publication": 2019,
+    "language": "sk",
+    "format": "HARDCOVER",
+    "pages": 240,
+    "dimensions": "130×210 mm",
+    "weight": 384,
+    "categoryPath": [
+      "knihy.beletria.slovenska_proza.romany.detektivky_trilery",
+      "knihy.beletria.romany.historicke.detektivne_krimi"
+    ]
+  },
+  {
+    "catalogId": 279295,
+    "isbn": "9788055156453",
+    "name": "Mäso - Vtedy na východe",
+    "originalName": "Mäso - Vtedy na východe",
+    "author": "Arpád Soltész",
+    "publisher": "Ikar",
+    "originalPublication": 2017,
+    "publication": 2017,
+    "language": "sk",
+    "format": "HARDCOVER",
+    "pages": 320,
+    "dimensions": "133×205 mm",
+    "weight": 380,
+    "categoryPath": [
+      "knihy.biografie_a_zivotopisy.spomienky_udalosti.organizacie_mafia",
+      "knihy.beletria.slovenska_proza.romany.detektivky_trilery"
+    ]
+  },
+  {
+    "catalogId": 705711,
+    "isbn": "9788055172705",
+    "name": "Sviňa",
+    "originalName": "Sviňa",
+    "author": "Arpád Soltész",
+    "publisher": "Ikar",
+    "originalPublication": 2018,
+    "publication": 2020,
+    "language": "sk",
+    "format": "HARDCOVER",
+    "pages": 336,
+    "dimensions": "125×200 mm",
+    "weight": 416,
+    "categoryPath": [
+      "knihy.beletria.slovenska_proza.romany.detektivky_trilery"
+    ]
+  },
+  {
+    "catalogId": 175520,
+    "isbn": "9788055139654",
+    "name": "Strach",
+    "originalName": "Strach",
+    "author": "Jozef Karika",
+    "publisher": "Ikar",
+    "originalPublication": 2014,
+    "publication": 2014,
+    "language": "sk",
+    "format": "HARDCOVER",
+    "pages": 328,
+    "dimensions": "137×207 mm",
+    "weight": 399,
+    "categoryPath": [
+      "knihy.beletria.slovenska_proza.romany.fantasy_scify_horor"
+    ]
+  },
+  {
+    "catalogId": 743209,
+    "isbn": "9788055175294",
+    "name": "Smršť",
+    "originalName": "Smršť",
+    "author": "Jozef Karika",
+    "publisher": "Ikar",
+    "originalPublication": 2020,
+    "publication": 2020,
+    "futurePublication": "16.10.2020",
+    "language": "sk",
+    "format": "HARDCOVER",
+    "pages": 248,
+    "dimensions": "125×200 mm",
+    "categoryPath": [
+      "knihy.beletria.slovenska_proza.romany.detektivky_trilery",
+      "knihy.beletria.trilery.mysteriozne"
+    ]
+  },
+  {
+    "catalogId": 731719,
+    "isbn": "9788055174440",
+    "name": "Kráľovstvo",
+    "originalName": "Kongeriket/Lillebror",
+    "author": "Jo Nesbo",
+    "publisher": "Ikar",
+    "originalPublication": 2020,
+    "publication": 2020,
+    "language": "sk",
+    "format": "HARDCOVER",
+    "pages": 568,
+    "dimensions": "125×200 mm",
+    "weight": 616,
+    "categoryPath": [
+      "knihy.beletria.trilery.ostatne",
+      "knihy.beletria.detektivky.severske_detektivky.norsko",
+      "knihy.beletria.romany.novodobe.detektivne_krimi"
+    ]
+  },
+  {
+    "catalogId": 757725,
+    "isbn": "9788055647623",
+    "name": "Klbko zmijí ",
+    "originalName": "Klbko zmijí ",
+    "author": "Dominik Dán",
+    "publisher": "Slovart",
+    "originalPublication": 2020,
+    "publication": 2020,
+    "language": "sk",
+    "format": "HARDCOVER",
+    "pages": 304,
+    "dimensions": "130×210 mm",
+    "weight": 391,
+    "categoryPath": [
+      "knihy.beletria.slovenska_proza.romany.detektivky_trilery",
+      "knihy.beletria.detektivky.slovenske_a_ceske_detektivky.slovenske_detektivky"
+    ]
+  },
+  {
+    "catalogId": 738219,
+    "isbn": "9788056619179",
+    "name": "Druhá Nadácia",
+    "originalName": "Second Foundation",
+    "author": "Isaac Asimov",
+    "publisher": "Lindeni",
+    "futurePublication": "23.10.2020",
+    "language": "sk",
+    "format": "HARDCOVER",
+    "pages": 380,
+    "dimensions": "145×205 mm",
+    "categoryPath": [
+      "knihy.beletria.klasicka_literatura.svetova_klasika.fantasy_scify_horor",
+      "knihy.beletria.scify_fantasy_horor.scify.soft_hard.hard"
+    ]
+  },
+  {
+    "catalogId": 780543,
+    "isbn": "9788082031990",
+    "name": "Černobyľ: Príručka prežitia",
+    "originalName": "Manual for Survival: A Chernobyl Guide to the Future",
+    "author": "Kate Brown",
+    "publisher": "Absynt",
+    "originalPublication": 2020,
+    "publication": 2019,
+    "language": "sk",
+    "format": "HARDCOVER",
+    "pages": 435,
+    "dimensions": "165×230 mm",
+    "weight": 866,
+    "categoryPath": [
+      "knihy.historia.dejiny_sveta.dejiny_krajin.dejiny_europy",
+      "knihy.biografie_a_zivotopisy.spomienky_udalosti.reportaze.svet"
+    ]
+  },
+  {
+    "catalogId": 619009,
+    "isbn": "9780241352069",
+    "name": "Manual for Survival",
+    "author": "Kate Brown",
+    "publisher": "Penguin Books",
+    "originalPublication": 2019,
+    "publication": 2019,
+    "language": "en",
+    "format": "HARDCOVER",
+    "pages": 432,
+    "dimensions": "162×240 mm",
+    "weight": 667,
+    "categoryPath": [
+      "knihy.beletria.dalsie_formaty_prozy.rozhovory_reportaze",
+      "knihy.cudzojazycna_literatura.anglicky_jazyk.odborna_literatura.historia",
+      "knihy.historia.novovek_moderne_dejiny.moderne_dejiny.20_storocie"
+    ]
+  },
+  {
+    "catalogId": 672033,
+    "isbn": "9788097345907",
+    "name": "Nevyhorení",
+    "originalName": "Nevyhorení",
+    "author": "Lucia Okša, Zuzana Matuščáková",
+    "publisher": "barecz & conrad books",
+    "originalPublication": 2019,
+    "publication": 2019,
+    "language": "sk",
+    "format": "HARDCOVER",
+    "pages": 216,
+    "dimensions": "180×245 mm",
+    "weight": 668,
+    "categoryPath": [
+      "knihy.odborna_a_naucna.spolocenske_vedy.psychologia.psychologia_pre_kazdeho.ostatne",
+      "knihy.odborna_a_naucna.spolocenske_vedy.psychologia.psychologia_pre_kazdeho.stres"
+    ]
+  },
+  {
+    "catalogId": 651821,
+    "isbn": "9788097342104",
+    "name": "Slovegán",
+    "originalName": "Slovegán",
+    "author": "Nikoleta Kováčová",
+    "publisher": "Moloko Ventures",
+    "originalPublication": 2019,
+    "publication": 2019,
+    "caption": "Slovenská vegánska kuchárka",
+    "language": "sk",
+    "format": "HARDCOVER",
+    "pages": 200,
+    "dimensions": "214×280 mm",
+    "weight": 956,
+    "categoryPath": [
+      "knihy.jedla_a_napoje.narodne_kuchyne.slovenska_kuchyna",
+      "knihy.jedla_a_napoje.vegetarianska_veganska_kuchyna.veganska_kuchyna"
+    ]
+  },
+  {
+    "catalogId": 763965,
+    "isbn": "9788097342142",
+    "name": "Slovegán 2",
+    "originalName": "Slovegán 2",
+    "author": "Nikoleta Kováčová",
+    "publisher": "Moloko Ventures",
+    "originalPublication": 2020,
+    "publication": 2020,
+    "caption": "Slovenská vegánska kuchárka",
+    "language": "sk",
+    "format": "HARDCOVER",
+    "pages": 200,
+    "dimensions": "214×280 mm",
+    "weight": 967,
+    "categoryPath": [
+      "knihy.jedla_a_napoje.narodne_kuchyne.slovenska_kuchyna",
+      "knihy.jedla_a_napoje.vegetarianska_veganska_kuchyna.veganska_kuchyna"
+    ]
+  },
+  {
+    "catalogId": 621731,
+    "isbn": "9788022210539",
+    "name": 1793,
+    "originalName": 1793,
+    "author": "Niklas Natt och Dag",
+    "publisher": "Tatran",
+    "originalPublication": 2019,
+    "language": "sk",
+    "format": "HARDCOVER",
+    "pages": 360,
+    "dimensions": "155×230 mm",
+    "weight": 589,
+    "categoryPath": [
+      "knihy.beletria.detektivky.historicke_detektivky",
+      "knihy.beletria.detektivky.severske_detektivky.svedsko"
+    ]
+  },
+  {
+    "catalogId": 711755,
+    "isbn": "9788022210867",
+    "name": 1794,
+    "author": "Niklas Natt och Dag",
+    "publisher": "Tatran",
+    "futurePublication": "16.10.2020",
+    "language": "sk",
+    "format": "HARDCOVER",
+    "dimensions": "149×229 mm",
+    "categoryPath": [
+      "knihy.beletria.detektivky.historicke_detektivky",
+      "knihy.beletria.detektivky.severske_detektivky.svedsko"
+    ]
+  }
+]

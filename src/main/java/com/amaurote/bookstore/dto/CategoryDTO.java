@@ -5,13 +5,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class CategoryDTO {
 
+    private long id;
     private String name;
-    private Integer parentId;
-    private String categoryStr;
+    private String caption;
+    private Long parentId;
     private String path;
     private String pathPretty;
 
     public CategoryDTO() {
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -22,12 +31,20 @@ public class CategoryDTO {
         this.name = name;
     }
 
-    public String getCategoryStr() {
-        return categoryStr;
+    public String getCaption() {
+        return caption;
     }
 
-    public void setCategoryStr(String categoryStr) {
-        this.categoryStr = categoryStr;
+    public void setCaption(String caption) {
+        this.caption = caption;
+    }
+
+    public Long getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
     }
 
     public String getPath() {

@@ -4,6 +4,7 @@ package com.amaurote.bookstore.domain.enums;
 public enum Language {
     EN("English"),
     SK("Slovak"),
+    CZ("Czech"),
     DE("German"),
     FI("Finnish");
 

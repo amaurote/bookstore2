@@ -17,6 +17,7 @@ public class DTOFactory {
         dto.setPublisher(book.getPublisher());
         dto.setPublication(book.getPublicationYear());
         dto.setOriginalPublication(book.getOriginalPublication());
+        dto.setFuturePublication(book.getFuturePublication());
         dto.setDescription(book.getDescription());
         dto.setLanguage(book.getLanguage().name());
 

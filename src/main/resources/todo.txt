@@ -4,3 +4,9 @@ rework CategoryService
 use Apache StringUtils
 change ids
 run analyse
+
+
+
+
+serie knih
+vsetky formaty vydani

@@ -1,8 +1,10 @@
 package com.amaurote.bookstore.dto;
 
+import java.util.List;
+
 public class BookDTO {
 
-    private String catalogId;
+    private Integer catalogId;
     private String isbn;
     private String name;
     private String originalName;
@@ -10,21 +12,23 @@ public class BookDTO {
     private String publisher;
     private String publication;
     private String originalPublication;
+    private String futurePublication;
     private String description;
     private String language;
     private String format;
     private Integer pages;
     private String dimensions;
     private Integer weight;
+    private List<String> categoryPath;
 
     public BookDTO() {
     }
 
-    public String getCatalogId() {
+    public Integer getCatalogId() {
         return catalogId;
     }
 
-    public void setCatalogId(String catalogId) {
+    public void setCatalogId(Integer catalogId) {
         this.catalogId = catalogId;
     }
 
@@ -84,6 +88,14 @@ public class BookDTO {
         this.originalPublication = originalPublication;
     }
 
+    public String getFuturePublication() {
+        return futurePublication;
+    }
+
+    public void setFuturePublication(String futurePublication) {
+        this.futurePublication = futurePublication;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -130,5 +142,13 @@ public class BookDTO {
 
     public void setWeight(Integer weight) {
         this.weight = weight;
+    }
+
+    public List<String> getCategoryPath() {
+        return categoryPath;
+    }
+
+    public void setCategoryPath(List<String> categoryPath) {
+        this.categoryPath = categoryPath;
     }
 }

@@ -1,7 +1,6 @@
 package com.amaurote.bookstore.service;
 
 import com.amaurote.bookstore.domain.entity.Book;
-import com.amaurote.bookstore.domain.entity.Rating;
 import com.amaurote.bookstore.domain.entity.Review;
 import com.amaurote.bookstore.domain.entity.User;
 import com.amaurote.bookstore.exception.ReviewException;

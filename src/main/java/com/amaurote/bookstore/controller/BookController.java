@@ -29,7 +29,7 @@ public class BookController {
 
     @PostMapping(value = "/add")
     public ResponseEntity<?> addBook(@RequestBody BookDTO dto) {
-        bookService.addNewBook(dto);
+        bookService.saveNewBookFromDTO(dto);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -38,20 +38,6 @@ public class BookController {
         bookService.addAllBooks(dtoList);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
-//    @GetMapping(value = "/test")
-//    public ResponseEntity<?> test() {
-//        BookDTO dto = new BookDTO();
-//
-//        dto.setCatalogId("123456");
-//        dto.setIsbn("ABCD-123456-789456");
-//        dto.setName("Harry Potter a Kameň Mudrcov");
-//        dto.setOriginalName("Harry Potter and Sorcerer Stone");
-//        dto.setAuthor("J.K. Rowling");
-//
-//        bookService.addNewBook(dto);
-//        return new ResponseEntity<>(HttpStatus.OK);
-//    }
 
     @GetMapping
     public ResponseEntity<?> getBook(@RequestParam(value = "id", required = false) String id,

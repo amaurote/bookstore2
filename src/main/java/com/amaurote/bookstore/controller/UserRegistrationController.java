@@ -1,7 +1,7 @@
 package com.amaurote.bookstore.controller;
 
 import com.amaurote.bookstore.dto.UserRegistrationDTO;
-import com.amaurote.bookstore.service.MyUserDetailsService;
+import com.amaurote.bookstore.service.UserService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserRegistrationController {
 
-    private final MyUserDetailsService myUserDetailsService;
+    private final UserService userService;
     private final PasswordEncoder passwordEncoder;
 
-    public UserRegistrationController(MyUserDetailsService myUserDetailsService, PasswordEncoder passwordEncoder) {
-        this.myUserDetailsService = myUserDetailsService;
+    public UserRegistrationController(UserService userService, PasswordEncoder passwordEncoder) {
+        this.userService = userService;
         this.passwordEncoder = passwordEncoder;
     }
 
@@ -41,7 +41,7 @@ public class UserRegistrationController {
     @PreAuthorize("permitAll()")
     public String registerUserAccount(@RequestBody UserRegistrationDTO registrationDto) {
         registrationDto.setPassword(passwordEncoder.encode(registrationDto.getPassword()));
-        myUserDetailsService.save(registrationDto);
+        userService.save(registrationDto);
         return "redirect:/home";
     }
 
