@@ -33,7 +33,7 @@ public class CategoryService {
 
         // check category name characters
         if (!catName.matches("[a-z0-9_-]*"))
-            throw new RuntimeException("Invalid characters in category name");
+            throw new CategoryException("Invalid characters in category name");
 
         // get parent
         Category parent = null;
@@ -87,7 +87,7 @@ public class CategoryService {
         return null;
     }
 
-    public CategoryDTO getCategoryDTO(long id) {
+    public CategoryDTO getCategoryDTO(int id) {
         Category category = categoryRepository.findById(id).orElseThrow(
                 () -> new CategoryException("Category with id '" + id + "' does not exist"));
         return getCategoryDTO(category);

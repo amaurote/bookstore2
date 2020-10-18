@@ -38,7 +38,7 @@ public class CategoryController {
 
     @GetMapping
     public ResponseEntity<?> getCategory(@RequestParam(value = "id") String id) {
-        long categoryId = Long.parseLong(id);
+        int categoryId = Integer.parseInt(id);
         return new ResponseEntity<>(categoryService.getCategoryDTO(categoryId), HttpStatus.OK);
     }
 
