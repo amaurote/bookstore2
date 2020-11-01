@@ -47,7 +47,7 @@ public class BookController {
 
         BookDTO dto = null;
         if(id != null && !id.isEmpty())
-            dto = dtoFactory.getBookDTO(bookService.getBookByCatalogId(id));
+            dto = dtoFactory.getBookDTO(bookService.getBookByCatalogId(Integer.parseInt(id)));
         else if(isbn != null && !isbn.isEmpty())
             dto = dtoFactory.getBookDTO(bookService.getBookByIsbn(isbn));
 

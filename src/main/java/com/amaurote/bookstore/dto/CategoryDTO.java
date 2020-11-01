@@ -2,6 +2,9 @@ package com.amaurote.bookstore.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class CategoryDTO {
 
@@ -11,6 +14,7 @@ public class CategoryDTO {
     private Integer parentId;
     private String path;
     private String pathPretty;
+    private final Set<CategoryDTO> childCategories = new HashSet<>();
 
     public CategoryDTO() {
     }
@@ -61,5 +65,9 @@ public class CategoryDTO {
 
     public void setPathPretty(String pathPretty) {
         this.pathPretty = pathPretty;
+    }
+
+    public Set<CategoryDTO> getChildCategories() {
+        return childCategories;
     }
 }

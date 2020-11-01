@@ -20,8 +20,22 @@ public class UserReviewVote {
     private Review review;
 
     @Enumerated(value = EnumType.STRING)
-    @Column(name = "vote")
+    @Column(name = "vote", nullable = false)
     private Vote vote;
+
+    public UserReviewVote() {
+    }
+
+    public UserReviewVote(User author, Review review) {
+        this.author = author;
+        this.review = review;
+    }
+
+    public UserReviewVote(User author, Review review, Vote vote) {
+        this.author = author;
+        this.review = review;
+        this.vote = vote;
+    }
 
     public Long getId() {
         return id;

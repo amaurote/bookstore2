@@ -31,7 +31,7 @@ public class RatingController {
         User user;
         if (principal != null) {
             user = userService.getUserByUsername(principal.getName());
-            ratingService.rateByCatalogId("326617", user, 2);
+            ratingService.rateByCatalogId(326617, user, 2);
         }
     }
 

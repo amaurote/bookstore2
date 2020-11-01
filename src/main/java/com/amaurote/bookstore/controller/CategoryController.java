@@ -2,6 +2,7 @@ package com.amaurote.bookstore.controller;
 
 import com.amaurote.bookstore.dto.CategoryDTO;
 import com.amaurote.bookstore.service.CategoryService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -54,7 +55,17 @@ public class CategoryController {
     }
 
     @GetMapping(value = "/tree")
-    public String getCategoryTree() {
-        return categoryService.generateTree();
+    public ResponseEntity<?> getCategoryTree(@RequestParam(value = "type") String type) {
+        String treeType = StringUtils.trimToEmpty(type);
+
+        if(treeType.equalsIgnoreCase("nodes")) {
+            return new ResponseEntity<>(categoryService.getAllCategories(false), HttpStatus.OK);
+        }
+
+        if(treeType.equalsIgnoreCase("text")) {
+            return new ResponseEntity<>(categoryService.generateTree(false), HttpStatus.OK);
+        }
+
+        return new ResponseEntity<>("Please specify parameter 'type' = nodes/text", HttpStatus.BAD_REQUEST);
     }
 }

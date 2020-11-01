@@ -8,14 +8,21 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class CategoryService {
 
     private final CategoryRepository categoryRepository;
+
+    private static Set<CategoryDTO> categoryDTOSet;
+
+    private static String categoryTree;
 
     public CategoryService(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
@@ -37,7 +44,7 @@ public class CategoryService {
 
         // get parent
         Category parent = null;
-        if(dto.getParentId() != null && dto.getParentId() != 0) {
+        if (dto.getParentId() != null && dto.getParentId() != 0) {
             parent = categoryRepository.findById(dto.getParentId()).orElseThrow(
                     () -> new CategoryException("Parent category doesn't exist"));
 
@@ -191,17 +198,49 @@ public class CategoryService {
     }
 
     @Transactional
-    public String generateTree() {
+    public Set<CategoryDTO> getAllCategories(boolean regenerate) {
+        if (regenerate || categoryDTOSet == null || categoryDTOSet.isEmpty()) {
+            categoryDTOSet = new HashSet<>();
 
-        // todo load all categories to hashmap and create tree outside sql
-
-        StringBuffer sb = new StringBuffer();
-        List<Category> rootCategories = categoryRepository.findAllByParent(null);
-        for (Category root : rootCategories) {
-            growBranches(sb, root, 0);
-            sb.append("\n");
+            List<Category> rootCategories = categoryRepository.findAllByParent(null);
+            for (Category root : rootCategories) {
+                categoryDTOSet.add(growNodeBranches(root));
+            }
         }
-        return sb.toString();
+
+        return categoryDTOSet;
+    }
+
+    private CategoryDTO growNodeBranches(Category parent) {
+        List<Category> children = categoryRepository.findAllByParent(parent);
+        CategoryDTO dto = new CategoryDTO();
+
+        if (children.size() > 0) {
+            for (Category child : children) {
+                dto.getChildCategories().add(growNodeBranches(child));
+            }
+        }
+
+        dto.setId(parent.getId());
+        dto.setName(parent.getName());
+        dto.setCaption(parent.getCaption());
+
+        return dto;
+    }
+
+    @Transactional
+    public String generateTree(boolean regenerate) {
+        if (regenerate || StringUtils.isAllBlank(categoryTree)) {
+            StringBuffer sb = new StringBuffer();
+            List<Category> rootCategories = categoryRepository.findAllByParent(null);
+            for (Category root : rootCategories) {
+                growBranches(sb, root, 0);
+                sb.append("\n");
+            }
+            categoryTree = sb.toString();
+        }
+
+        return categoryTree;
     }
 
     private void growBranches(StringBuffer sb, Category parent, int depth) {

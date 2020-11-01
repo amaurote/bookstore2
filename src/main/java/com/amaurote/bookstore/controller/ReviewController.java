@@ -34,7 +34,7 @@ public class ReviewController {
         User user;
         if (principal != null) {
             user = userService.getUserByUsername(principal.getName());
-            Book book = bookService.getBookByCatalogId("326617");
+            Book book = bookService.getBookByCatalogId(326617);
             reviewService.reviewOrUpdate(book, user, "This is my second review. Oh yeah...");
         }
     }

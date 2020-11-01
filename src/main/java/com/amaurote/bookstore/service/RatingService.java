@@ -20,7 +20,7 @@ public class RatingService {
         this.bookRepository = bookRepository;
     }
 
-    public Rating rateByCatalogId(String catalogId, User author, int rating) {
+    public Rating rateByCatalogId(int catalogId, User author, int rating) {
         return rateOrUpdate(bookRepository.findOneByCatalogId(catalogId).orElse(null), author, rating);
     }
 

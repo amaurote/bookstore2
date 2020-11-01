@@ -75,11 +75,11 @@ public class BookService {
         return book;
     }
 
-    public Book getBookByCatalogId(String catalogId) {   // todo change it to entity object
+    public Book getBookByCatalogId(int catalogId) {   // todo change it to entity object
         return bookRepository.findOneByCatalogId(catalogId).orElse(null);
     }
 
     public Book getBookByIsbn(String isbn) {
-        return bookRepository.findAllByIsbn(isbn).orElse(null);
+        return bookRepository.findOneByIsbn(isbn).orElse(null);
     }
 }
