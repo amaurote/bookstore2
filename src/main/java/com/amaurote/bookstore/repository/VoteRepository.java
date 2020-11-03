@@ -14,7 +14,7 @@ public interface VoteRepository extends JpaRepository<UserReviewVote, Long> {
 
     Optional<UserReviewVote> findByReviewAndAuthor(Review review, User author);
 
-    @Query("SELECT new com.amaurote.bookstore.repository.ReviewAggregateResults(" +
+    @Query("select new com.amaurote.bookstore.repository.ReviewAggregateResults(" +
             " sum(case when urv.vote = 'UP' then 1 else 0 end) as upvotes," +
             " sum(case when urv.vote = 'DOWN' then 1 else 0 end) as downvotes)" +
             " from UserReviewVote urv" +

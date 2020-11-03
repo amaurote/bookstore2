@@ -13,7 +13,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.List;
 
@@ -46,7 +45,7 @@ public class Book {
     private String publisher;
 
     @Column(name = "publication_year")
-    private String publicationYear;
+    private String publication;
 
     @Column(name = "original_publication")
     private String originalPublication;
@@ -139,12 +138,12 @@ public class Book {
         this.publisher = publisher;
     }
 
-    public String getPublicationYear() {
-        return publicationYear;
+    public String getPublication() {
+        return publication;
     }
 
-    public void setPublicationYear(String publicationYear) {
-        this.publicationYear = publicationYear;
+    public void setPublication(String publication) {
+        this.publication = publication;
     }
 
     public String getOriginalPublication() {

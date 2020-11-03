@@ -20,11 +20,6 @@ public class UserRegistrationController {
         this.passwordEncoder = passwordEncoder;
     }
 
-    @GetMapping("/")
-    public String home() {
-        return ("<h1>Welcome</h1>");
-    }
-
     @GetMapping("/user")
     @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
     public String user() {

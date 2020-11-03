@@ -6,11 +6,13 @@ import com.amaurote.bookstore.domain.enums.Format;
 import com.amaurote.bookstore.domain.enums.Language;
 import com.amaurote.bookstore.dto.BookDTO;
 import com.amaurote.bookstore.repository.BookRepository;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class BookService {
@@ -49,6 +51,44 @@ public class BookService {
         return bookRepository.save(book);
     }
 
+    public List<BookDTO> getAllBooks() {
+        List<Book> books = bookRepository.findAll();
+        List<BookDTO> dtos = new ArrayList<>();
+        for(Book b : books) {
+            dtos.add(dtoFactory.getBookDTO(b));
+        }
+
+        return dtos;
+    }
+
+    public List<Book> getAllBooks(String filterText) {
+        if(StringUtils.isAllBlank(filterText)) {
+            return bookRepository.findAll();
+        } else {
+            return bookRepository.search(filterText);
+        }
+    }
+
+    public Book save(Book book) {
+        if(StringUtils.isAllBlank(book.getId()) && book.getCatalogId() == null) {
+            book.setCatalogId(generateCatId());
+        }
+
+        return bookRepository.save(book);
+    }
+
+    private int generateCatId() {
+        Random random = new Random();
+        int low = 100000000;
+        int high = 999999999;
+        int cat = random.nextInt(high - low) + low;
+
+        if(bookRepository.existsByCatalogId(cat))
+            return generateCatId();
+        else
+            return cat;
+    }
+
     private Book dtoToBook(BookDTO dto) { // todo to dtofactory
         Book book = new Book();
         book.setCatalogId(dto.getCatalogId());
@@ -58,7 +98,7 @@ public class BookService {
         book.setFuturePublication(dto.getFuturePublication());
         book.setAuthor(dto.getAuthor());
         book.setPublisher(dto.getPublisher());
-        book.setPublicationYear(dto.getPublication());
+        book.setPublication(dto.getPublication());
         book.setOriginalPublication(dto.getOriginalPublication());
         book.setDescription(dto.getDescription());
         book.setLanguage(Language.valueOf(dto.getLanguage().toUpperCase()));

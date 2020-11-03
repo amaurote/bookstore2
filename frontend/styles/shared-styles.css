@@ -1,0 +1,21 @@
+/* Book view */
+.book-view .content {
+    display: flex;
+}
+
+.book-view .book-grid {
+    flex: 2;
+}
+
+.book-view .new-book-form {
+    flex: 1;
+    padding: var(--lumo-space-m);
+}
+
+@media all and (max-width: 1100px) {
+    .book-view.editing .toolbar,
+    .book-view.editing .book-grid {
+        display: none;
+    }
+}
+
