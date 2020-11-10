@@ -5,6 +5,7 @@ import com.amaurote.bookstore.domain.entity.User;
 import com.amaurote.bookstore.service.BookService;
 import com.amaurote.bookstore.service.ReviewService;
 import com.amaurote.bookstore.service.UserService;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
 
+@ConditionalOnExpression("${custom.controller.enabled}")
 @RestController
 @RequestMapping("/review")
 public class ReviewController {

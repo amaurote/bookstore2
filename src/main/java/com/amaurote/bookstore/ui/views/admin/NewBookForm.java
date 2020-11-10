@@ -1,4 +1,4 @@
-package com.amaurote.bookstore.views;
+package com.amaurote.bookstore.ui.views.admin;
 
 import com.amaurote.bookstore.domain.entity.Book;
 import com.amaurote.bookstore.domain.enums.Format;

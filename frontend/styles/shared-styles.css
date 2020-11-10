@@ -1,3 +1,19 @@
+/* Dashboard */
+
+a[highlight] {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.header {
+    padding: 0 var(--lumo-space-m);
+}
+
+.header h1.logo {
+    font-size: 1em;
+    margin: var(--lumo-space-m);
+}
+
 /* Book view */
 .book-view .content {
     display: flex;
@@ -17,5 +33,10 @@
     .book-view.editing .book-grid {
         display: none;
     }
+}
+
+.dashboard-view .book-stats {
+    font-size: 4em;
+    margin: 1em 0;
 }
 

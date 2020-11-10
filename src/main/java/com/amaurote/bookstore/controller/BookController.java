@@ -3,6 +3,7 @@ package com.amaurote.bookstore.controller;
 import com.amaurote.bookstore.dto.BookDTO;
 import com.amaurote.bookstore.service.BookService;
 import com.amaurote.bookstore.service.DTOFactory;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@ConditionalOnExpression("${custom.controller.enabled}")
 @RestController
 @RequestMapping("/book")
 public class BookController {

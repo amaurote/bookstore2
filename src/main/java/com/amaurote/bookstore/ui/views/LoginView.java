@@ -1,4 +1,4 @@
-package com.amaurote.bookstore.views;
+package com.amaurote.bookstore.ui.views;
 
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.login.LoginForm;
@@ -25,7 +25,6 @@ public class LoginView extends VerticalLayout implements BeforeEnterObserver {
 
         add(new H1("Black Books"), login);
     }
-
 
     @Override
     public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {

@@ -54,7 +54,7 @@ public class BookService {
     public List<BookDTO> getAllBooks() {
         List<Book> books = bookRepository.findAll();
         List<BookDTO> dtos = new ArrayList<>();
-        for(Book b : books) {
+        for (Book b : books) {
             dtos.add(dtoFactory.getBookDTO(b));
         }
 
@@ -62,7 +62,7 @@ public class BookService {
     }
 
     public List<Book> getAllBooks(String filterText) {
-        if(StringUtils.isAllBlank(filterText)) {
+        if (StringUtils.isAllBlank(filterText)) {
             return bookRepository.findAll();
         } else {
             return bookRepository.search(filterText);
@@ -70,21 +70,23 @@ public class BookService {
     }
 
     public Book save(Book book) {
-        if(StringUtils.isAllBlank(book.getId()) && book.getCatalogId() == null) {
-            book.setCatalogId(generateCatId());
+        if (StringUtils.isAllBlank(book.getId()) && book.getCatalogId() == null) {
+            book.setCatalogId(generateCatId(null));
         }
 
         return bookRepository.save(book);
     }
 
-    private int generateCatId() {
-        Random random = new Random();
+    private int generateCatId(Random random) {
+        if (random == null)
+            random = new Random();
+
         int low = 100000000;
         int high = 999999999;
         int cat = random.nextInt(high - low) + low;
 
-        if(bookRepository.existsByCatalogId(cat))
-            return generateCatId();
+        if (bookRepository.existsByCatalogId(cat))
+            return generateCatId(random);
         else
             return cat;
     }
@@ -121,5 +123,9 @@ public class BookService {
 
     public Book getBookByIsbn(String isbn) {
         return bookRepository.findOneByIsbn(isbn).orElse(null);
+    }
+
+    public long getCount() {
+        return bookRepository.count();
     }
 }

@@ -1,6 +1,6 @@
 package com.amaurote.bookstore.configuration;
 
-import com.amaurote.bookstore.views.LoginView;
+import com.amaurote.bookstore.ui.views.LoginView;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.server.ServiceInitEvent;

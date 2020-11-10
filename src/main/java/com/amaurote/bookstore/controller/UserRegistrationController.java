@@ -2,6 +2,7 @@ package com.amaurote.bookstore.controller;
 
 import com.amaurote.bookstore.dto.UserRegistrationDTO;
 import com.amaurote.bookstore.service.UserService;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@ConditionalOnExpression("${custom.controller.enabled}")
 @RestController
 public class UserRegistrationController {
 

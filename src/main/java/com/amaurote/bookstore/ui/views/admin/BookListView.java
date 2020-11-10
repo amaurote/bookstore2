@@ -1,10 +1,10 @@
-package com.amaurote.bookstore.views;
+package com.amaurote.bookstore.ui.views.admin;
 
 import com.amaurote.bookstore.domain.entity.Book;
 import com.amaurote.bookstore.service.BookService;
+import com.amaurote.bookstore.ui.MainLayout;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -14,10 +14,8 @@ import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.Route;
 import org.springframework.beans.factory.annotation.Autowired;
 
-
-@Route("books")
-@CssImport("./styles/shared-styles.css")
-public class BookView extends VerticalLayout {
+@Route(value = "admin/books", layout = MainLayout.class)
+public class BookListView extends VerticalLayout {
 
     private BookService bookService;
 
@@ -25,7 +23,7 @@ public class BookView extends VerticalLayout {
     Grid<Book> grid = new Grid<>(Book.class);
     TextField filterText = new TextField();
 
-    public BookView(@Autowired BookService bookService) {
+    public BookListView(@Autowired BookService bookService) {
         this.bookService = bookService;
 
         addClassName("book-view");
