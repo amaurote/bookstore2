@@ -41,4 +41,6 @@ public class RatingService {
     public void removeRating(Book book, User author) {
         ratingRepository.findByBookAndAuthor(book, author).ifPresent(ratingRepository::delete);
     }
+
+
 }

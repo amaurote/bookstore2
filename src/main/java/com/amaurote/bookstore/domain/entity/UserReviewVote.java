@@ -1,7 +1,5 @@
 package com.amaurote.bookstore.domain.entity;
 
-import com.amaurote.bookstore.domain.enums.Vote;
-
 import javax.persistence.*;
 
 @Entity
@@ -19,9 +17,8 @@ public class UserReviewVote {
     @ManyToOne
     private Review review;
 
-    @Enumerated(value = EnumType.STRING)
     @Column(name = "vote", nullable = false)
-    private Vote vote;
+    private Integer vote;
 
     public UserReviewVote() {
     }
@@ -31,7 +28,7 @@ public class UserReviewVote {
         this.review = review;
     }
 
-    public UserReviewVote(User author, Review review, Vote vote) {
+    public UserReviewVote(User author, Review review, Integer vote) {
         this.author = author;
         this.review = review;
         this.vote = vote;
@@ -61,11 +58,11 @@ public class UserReviewVote {
         this.review = review;
     }
 
-    public Vote getVote() {
+    public Integer getVote() {
         return vote;
     }
 
-    public void setVote(Vote vote) {
+    public void setVote(Integer vote) {
         this.vote = vote;
     }
 }

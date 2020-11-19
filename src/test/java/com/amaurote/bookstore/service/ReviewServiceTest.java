@@ -4,9 +4,8 @@ import com.amaurote.bookstore.BookstoreApplication;
 import com.amaurote.bookstore.domain.entity.Book;
 import com.amaurote.bookstore.domain.entity.Review;
 import com.amaurote.bookstore.domain.entity.User;
-import com.amaurote.bookstore.domain.enums.Vote;
 import com.amaurote.bookstore.repository.BookRepository;
-import com.amaurote.bookstore.repository.ReviewAggregateResults;
+import com.amaurote.bookstore.repository.VoteAggregateResults;
 import com.amaurote.bookstore.repository.ReviewRepository;
 import com.amaurote.bookstore.repository.UserRepository;
 import com.amaurote.bookstore.repository.VoteRepository;
@@ -124,22 +123,22 @@ public class ReviewServiceTest {
 
         Review review = reviewService.reviewOrUpdate(book, author, "Second test review.");
 
-        reviewService.voteOrUpdate(review, commenter1, Vote.UP);
-        reviewService.voteOrUpdate(review, commenter2, Vote.UP);
-        reviewService.voteOrUpdate(review, commenter3, Vote.UP);
+        reviewService.voteOrUpdate(review, commenter1, 1);
+        reviewService.voteOrUpdate(review, commenter2, 1);
+        reviewService.voteOrUpdate(review, commenter3, 1);
 
-        ReviewAggregateResults votes = voteRepository.findUserReviewVotes(review);
+        VoteAggregateResults votes = voteRepository.findUserReviewVotes(review);
         Assert.assertEquals("Incorrect VoteAggregateResults", votes.getScore(), 3);
 
-        reviewService.voteOrUpdate(review, commenter1, Vote.DOWN);
-        reviewService.voteOrUpdate(review, commenter2, Vote.DOWN);
-        reviewService.voteOrUpdate(review, commenter3, Vote.DOWN);
+        reviewService.voteOrUpdate(review, commenter1, -1);
+        reviewService.voteOrUpdate(review, commenter2, -1);
+        reviewService.voteOrUpdate(review, commenter3, -1);
 
         votes = voteRepository.findUserReviewVotes(review);
         Assert.assertEquals("Incorrect VoteAggregateResults", votes.getScore(), -3);
 
-        reviewService.voteOrUpdate(review, commenter2, Vote.UP);
-        reviewService.voteOrUpdate(review, commenter3, Vote.UP);
+        reviewService.voteOrUpdate(review, commenter2, 1);
+        reviewService.voteOrUpdate(review, commenter3, 1);
 
         votes = voteRepository.findUserReviewVotes(review);
         Assert.assertEquals("Incorrect VoteAggregateResults Score", votes.getScore(), 1);

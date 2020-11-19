@@ -4,8 +4,8 @@ import com.amaurote.bookstore.domain.entity.Book;
 import com.amaurote.bookstore.domain.entity.Review;
 import com.amaurote.bookstore.domain.entity.User;
 import com.amaurote.bookstore.domain.entity.UserReviewVote;
-import com.amaurote.bookstore.domain.enums.Vote;
 import com.amaurote.bookstore.exception.ReviewException;
+import com.amaurote.bookstore.repository.VoteAggregateResults;
 import com.amaurote.bookstore.repository.ReviewRepository;
 import com.amaurote.bookstore.repository.VoteRepository;
 import org.springframework.stereotype.Service;
@@ -46,19 +46,30 @@ public class ReviewService {
         return reviewRepository.save(review);
     }
 
-    public UserReviewVote voteOrUpdate(Review review, User author, Vote vote) {
+    public UserReviewVote voteOrUpdate(Review review, User author, int vote) {
         if (review == null || author == null) {
             throw new ReviewException("Unable to map review");
         }
-        if (vote == null) {
-            throw new ReviewException("Vote can't be null");
+        if (vote == 0) {
+            removeVote(review, author);
+            return null;
         }
+
+        int clamped = Math.max(-1, Math.min(1, vote));
 
         UserReviewVote reviewVote = voteRepository.findByReviewAndAuthor(review, author)
                 .orElse(new UserReviewVote(author, review));
 
-        reviewVote.setVote(vote);
+        reviewVote.setVote(clamped);
 
         return voteRepository.save(reviewVote);
+    }
+
+    public VoteAggregateResults getReviewVotes(Review review) {
+        return voteRepository.findUserReviewVotes(review);
+    }
+
+    public void removeVote(Review review, User author) {
+        // todo
     }
 }

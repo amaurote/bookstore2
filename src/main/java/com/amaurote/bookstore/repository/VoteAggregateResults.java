@@ -1,16 +1,16 @@
 package com.amaurote.bookstore.repository;
 
-public class ReviewAggregateResults {
+public class VoteAggregateResults {
     private final int upvotes;
     private final int downvotes;
     private final int allvotes;
     private final int score;
 
-    public ReviewAggregateResults(Long upvotes, Long downvotes) {
+    public VoteAggregateResults(Long upvotes, Long downvotes, Long allvotes, Long score) {
         this.upvotes = (upvotes == null) ? 0 : upvotes.intValue();
         this.downvotes = (downvotes == null) ? 0 : downvotes.intValue();
-        this.allvotes = this.upvotes + this.downvotes;
-        this.score = this.upvotes - this.downvotes;
+        this.allvotes = allvotes.intValue();
+        this.score = score.intValue();
     }
 
     public int getUpvotes() {
